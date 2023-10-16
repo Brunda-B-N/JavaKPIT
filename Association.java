@@ -20,30 +20,27 @@ public class Association{
 class Human{
 
 }
-class Terrorist extends Human{
+class Terrorist extends Human{     //isA
 
-    Mentor mentorObj = new Mentor("Brunda");
-    Mentor mentorObj2 = new Mentor("Bharath");
-    Plan planObj = new Plan();
+    Mentor mentorObj = new Mentor("Jhone");          //hasA
+    Mentor mentorObj2 = new Mentor("Jake");        //hasA
+
+    Plan planObj = new Plan();                             //hasA
     
-    private Weapon weaponObj = new Weapon();
-    /**
-     * @param gunsref
-     * @param bluePrintref
-     * @param bombref
-     */
-    public void Attack(Guns gunsref, BluePrint bluePrintref, Bomb bombref ){
+    private Weapon weaponObj = new Weapon();               //hasA
+    
+    public void Attack(Guns gunsref, BluePrint bluePrintref, Bomb bombref ){             //function usesA
         System.out.println("--------------------------------------------------------------");
         System.out.println("The attack is in "+bluePrintref.place);
         
         if (bluePrintref.isLarge.equals(true)){
             gunsref.numbers = gunsref.numbers + 2;
             System.out.println("Mentor for the attack is "+mentorObj.name);
-            System.out.println("As plan is large using "+gunsref.numbers+ " guns with the "+bombref.capacity+ " bomb capacity");
+            System.out.println("As plan is large using "+gunsref.numbers+" "+gunsref.guntype+ " with the "+bombref.capacity+ " bomb capacity");
         }
         else{
             System.out.println("Mentor for the attack is "+mentorObj2.name);
-            System.out.println("Plan is simple and using " +gunsref.numbers+ " guns with the "+bombref.capacity+ " bomb capacity");
+            System.out.println("Plan is simple and using " +gunsref.numbers+ " "+gunsref.guntype+ " guns with the "+bombref.capacity+ " bomb capacity");
         }
         System.out.println("Disaster is successfull in "+bluePrintref.place+" in "+bombref.capacity+" range");
         System.out.println("--------------------------------------------------------------");
